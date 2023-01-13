@@ -1,0 +1,7 @@
+<compatibility-matrix version="1.0" type="framework">
+    <hal format="aidl" optional="true">
+        <name>vendor.lineage.powershare</name>
+        <version>1</version>
+        <fqname>IPowerShare/default</fqname>
+    </hal>
+</compatibility-matrix>

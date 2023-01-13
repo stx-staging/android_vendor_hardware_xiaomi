@@ -1,0 +1,4 @@
+service vendor.powershare-hal-xiaomi /vendor/bin/hw/vendor.lineage.powershare-service.xiaomi
+    class hal
+    user system
+    group system

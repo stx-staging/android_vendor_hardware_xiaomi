@@ -1,0 +1,19 @@
+// Copyright (C) 2020 The LineageOS Project
+// Copyright (C) 2023 StatiXOS
+// SPDX-License-Identifer: Apache-2.0
+
+rust_binary {
+    name: "vendor.lineage.powershare-service.xiaomi",
+    vintf_fragments: ["vendor.lineage.powershare-service.xiaomi.xml"],
+    init_rc: ["vendor.lineage.powershare-service.xiaomi.rc"],
+    relative_install_path: "hw",
+    vendor: true,
+    srcs: [
+        "src/main.rs",
+    ],
+    prefer_rlib: true,
+    rustlibs: [
+        "libbinder_rs",
+        "vendor.lineage.powershare-V1-rust",
+    ],
+}
