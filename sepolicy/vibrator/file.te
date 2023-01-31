@@ -1,0 +1,2 @@
+# Haptic nodes
+type sysfs_haptics, fs_type, sysfs_type;
