@@ -1,0 +1,3 @@
+# Vibrator HAL props
+vendor.vibrator.hal.        u:object_r:vendor_haptics_prop:s0
+

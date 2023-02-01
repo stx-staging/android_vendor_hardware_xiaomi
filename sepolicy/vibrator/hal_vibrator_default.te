@@ -1,2 +1,5 @@
 # Allow vibrator HAL to write into haptic nodes
 allow hal_vibrator_default sysfs_haptics:file rw_file_perms;
+
+# Allow vibrator HAL to get haptics props
+get_prop(hal_vibrator_default, vendor_haptics_prop)
