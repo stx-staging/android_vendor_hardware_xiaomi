@@ -45,11 +45,10 @@ cc_library_headers {
 cc_library_static {
     name: "libudfps_extension.xiaomi",
     srcs: ["UdfpsExtension.cpp"],
-    vendor: true,
     include_dirs: [
         "frameworks/native/services/surfaceflinger/CompositionEngine/include"
     ],
     header_libs: [
-        "device_kernel_headers",
+        "device_kernel_headers_system",
     ],
 }
