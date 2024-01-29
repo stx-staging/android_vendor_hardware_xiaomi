@@ -161,6 +161,7 @@ class DoubleTapSensor : public SysfsPollingOneShotSensor {
 #ifdef USES_SINGLE_TAP_SENSOR
 static const char* singleTapPaths[] = {
   "/sys/devices/platform/soc/884000.i2c/i2c-1/1-0038/single_tap_pressed",
+  "/sys/devices/platform/soc/a8c000.spi/spi_master/spi1/spi1.0/single_tap_pressed",
   NULL
 };
 
