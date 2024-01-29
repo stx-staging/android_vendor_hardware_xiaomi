@@ -142,27 +142,37 @@ class SysfsPollingOneShotSensor : public OneShotSensor {
     int mPollFd;
 };
 
-const std::string kTsDoubleTapPressedPath = "/sys/devices/platform/soc/884000.i2c/i2c-1/1-0038/double_tap_pressed";
+#ifdef USES_DOUBLE_TAP_SENSOR
+static const char* doubleTapPaths[] = {
+  "/sys/devices/platform/soc/884000.i2c/i2c-1/1-0038/double_tap_pressed",
+  NULL
+};
 
 class DoubleTapSensor : public SysfsPollingOneShotSensor {
   public:
     DoubleTapSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
         : SysfsPollingOneShotSensor(
-              sensorHandle, callback, kTsDoubleTapPressedPath,
+              sensorHandle, callback, GetPollPath(doubleTapPaths),
               "Double Tap Sensor", "com.statixos.sensor.double_tap",
               static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 1)) {}
 };
+#endif
 
-const std::string kTsSingleTapPressedPath = "/sys/devices/platform/soc/884000.i2c/i2c-1/1-0038/single_tap_pressed";
+#ifdef USES_SINGLE_TAP_SENSOR
+static const char* singleTapPaths[] = {
+  "/sys/devices/platform/soc/884000.i2c/i2c-1/1-0038/single_tap_pressed",
+  NULL
+};
 
 class SingleTapSensor : public SysfsPollingOneShotSensor {
   public:
     SingleTapSensor(int32_t sensorHandle, ISensorsEventCallback* callback)
         : SysfsPollingOneShotSensor(
-              sensorHandle, callback, kTsSingleTapPressedPath,
+              sensorHandle, callback, GetPollPath(singleTapPaths),
               "Single Tap Sensor", "com.statixos.sensor.single_tap",
               static_cast<SensorType>(static_cast<int32_t>(SensorType::DEVICE_PRIVATE_BASE) + 1)) {}
 };
+#endif
 
 }  // namespace implementation
 }  // namespace subhal
