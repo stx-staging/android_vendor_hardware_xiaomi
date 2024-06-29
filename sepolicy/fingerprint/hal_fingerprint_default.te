@@ -33,3 +33,5 @@ get_prop(hal_fingerprint_default, vendor_fp_prop)
 set_prop(hal_fingerprint_default, vendor_fp_prop)
 
 get_prop(system_server, vendor_fp_prop);
+
+allow hal_fingerprint_default vendor_fp_hwservice:hwservice_manager find;

@@ -1,0 +1,5 @@
+com.fingerprints.extension::IFingerprintEngineering         u:object_r:vendor_fp_hwservice:s0
+com.fingerprints.extension::IFingerprintSensorTest          u:object_r:vendor_fp_hwservice:s0
+com.fingerprints.extension::IFpcFingerprintAuthenticator    u:object_r:vendor_fp_hwservice:s0
+com.fingerprints.extension::IFingerprintNavigation          u:object_r:vendor_fp_hwservice:s0
+
